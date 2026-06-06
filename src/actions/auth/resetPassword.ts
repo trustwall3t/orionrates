@@ -9,7 +9,7 @@ export const requestResetPassword = async (email: string) => {
 	if (!user) {
 		return { error: 'User not found' };
 	}
-	const link = `https://finite-dome.vercel.app/auth/reset-password?id=${user.id}`;
+	const link = `https://orionrates.netlify.app/auth/reset-password?id=${user.id}`;
 	await sendEmail(email, 'resetPassword', { link });
 
 	return { success: 'Password reset link sent successfully' };
