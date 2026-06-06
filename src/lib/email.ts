@@ -113,19 +113,19 @@ const emailStyles = `
 // Email templates
 export const emailTemplates: EmailTemplates = {
 	welcome: (name: string, email: string, token: string) => ({
-		subject: 'Welcome to Finite Dome Inc.!',
+		subject: 'Welcome to Orion Rates Inc.!',
 		html: `
 		${emailStyles}
 		<div class="container">
 			<img src="${getLogoUrl()}" alt="finitedomes Logo" class="logo" />
-			<h1>Welcome to finitedomes, ${name}!</h1>
+			<h1>Welcome to Orion Rates, ${name}!</h1>
 			<p>Thank you for registering with us. We're excited to have you on board!</p>
 			<h4>Your Verification Token is: <strong>${token}</strong></h4>
 			<p>Verify your email by clicking the button below:</p>
-			<a href="https://finite-dome.vercel.app/auth/verify?email=${email}" class="button">Verify Email</a>
+			<a href="https://orionrates.netlify.app/auth/verify?email=${email}" class="button">Verify Email</a>
 			<p>If you have any questions, feel free to contact our support team.</p>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -141,7 +141,7 @@ export const emailTemplates: EmailTemplates = {
 			<a href="${data.link}" class="button">Reset Password</a>
 			<p>If you didn't request this, please ignore this email.</p>
 			<div class="footer">
-					<p>Best regards,<br>The Finite Dome Team</p>
+					<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -155,7 +155,7 @@ export const emailTemplates: EmailTemplates = {
 			<h1>Deposit Request</h1>
 			<p>You have requested to deposit <span class="amount">$${data.amount}</span> into your account.</p>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -169,7 +169,7 @@ export const emailTemplates: EmailTemplates = {
 			<h1>Deposit Confirmation</h1>
 			<p>Your deposit of <span class="amount">$${data.amount}</span> has been confirmed.</p>
 			<div class="footer">
-				<p>Best regards,<br>The finitedomes Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -183,7 +183,7 @@ export const emailTemplates: EmailTemplates = {
 			<h1>Withdrawal Request</h1>
 			<p>You have requested to withdraw <span class="amount">$${data.amount}</span> from your account.</p>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -197,7 +197,7 @@ export const emailTemplates: EmailTemplates = {
 			<h1>Withdrawal Confirmation</h1>
 			<p>Your withdrawal of <span class="amount">$${data.amount}</span> has been confirmed.</p>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -211,7 +211,7 @@ export const emailTemplates: EmailTemplates = {
 			<h1>Trade Confirmation</h1>
 			<p>Trade of <span class="amount">$${data.amount} ${data.symbol}</span> with order type ${data.type} has been successfully executed.</p>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -224,9 +224,9 @@ export const emailTemplates: EmailTemplates = {
 			<img src="${getLogoUrl()}" alt="finitedomes Logo" class="logo" />
 			<h1>${data.type} Notification</h1>
 			<p>You have received a ${data.type} notification of <span class="amount">$${data.amount}</span>. from one of our users. Please check your dashboard to view the transaction.</p>
-			<a href="https://www.finite-dome.vercel.app/admin/transactions" class="button">View Transactions</a>
+			<a href="https://www.orionrates.netlify.app/admin/transactions" class="button">View Transactions</a>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -241,7 +241,7 @@ export const emailTemplates: EmailTemplates = {
 			<p>You have received a referral bonus of <span class="amount">$${data.amount}</span>. from one of our users. Please check your dashboard to view the transaction.</p>
 				
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -251,13 +251,13 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="Legacy Venture Limited Logo" class="logo" />
+			<img src="${getLogoUrl()}" alt="Orion Rates Logo" class="logo" />
 			<h1> ${data.email}'s Verification Token</h1>
 			<p>Your verification token is: <strong class="amount">${data.token}</strong>. This token will expire in 10 minutes.</p>
 			<p> If you want to verify your email, please click the button below. If you did not request this, please ignore this email.</p>
-			<a href="https://finite-dome.vercel.app/auth/verify?email=${data.email}" class="button">Verify Email</a>
+			<a href="https://orionrates.netlify.app/auth/verify?email=${data.email}" class="button">Verify Email</a>
 			<div class="footer">
-				<p>Best regards,<br>The Finite Dome Team</p>
+				<p>Best regards,<br>The Orion Rates Team</p>
 			</div>
 		</div>
 		`,
@@ -350,11 +350,14 @@ export const sendEmail = async <T extends keyof EmailData>(
 		const { subject, html } = result;
 
 		const mailOptions = {
-			from: `"finitedomes" <${
-				process.env.EMAIL_FROM || 'noreply@finitedomes.com'
+
+
+
+			from: `"Orion Rates" <${
+				process.env.EMAIL_FROM || 'noreply@orionrates.com'
 			}>`,
-			replyTo: `"finitedomes Support" <${
-				process.env.EMAIL_FROM || 'noreply@finitedomes.com'
+			replyTo: `"Orion Rates Support" <${
+				process.env.EMAIL_FROM || 'noreply@orionrates.com'
 			}>`,
 			to,
 			subject,
