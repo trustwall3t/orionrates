@@ -153,10 +153,10 @@ const DashboardClient = ({ user }: DashboardClientProps) => {
 					
 					<div>
 						<p className='text-sm text-center px-5 flex items-center gap-2'>
-							https://finitedome.vercel.app/auth/signup?referral={user.refcode || '7658'}
+							https://orionrates.netlify.app/auth/signup?referral={user.refcode || '7658'}
 							<CopyIcon className='w-6 h-6' onClick={() => {
 								navigator.clipboard.writeText(
-									`https://finitedome.vercel.app/auth/signup?referral=${user.refcode || '7865'}`
+									`https://orionrates.netlify.app/auth/signup?referral=${user.refcode || '7865'}`
 								);
 								toast.success('Link copied to clipboard', {
 									position: 'top-right',

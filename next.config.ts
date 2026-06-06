@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
 		domains: ['trustochain.com', 'res.cloudinary.com'],
 		localPatterns: [
 			{
-				pathname: '/logo.png',
+				pathname: '/**',
 			},
 		],
 	},

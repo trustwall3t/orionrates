@@ -117,7 +117,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Welcome to Orion Rates, ${name}!</h1>
 			<p>Thank you for registering with us. We're excited to have you on board!</p>
 			<h4>Your Verification Token is: <strong>${token}</strong></h4>
@@ -135,7 +135,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Password Reset Request</h1>
 			<p>You have requested to reset your password. Click the button below to reset your password:</p>
 			<a href="${data.link}" class="button">Reset Password</a>
@@ -151,7 +151,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Deposit Request</h1>
 			<p>You have requested to deposit <span class="amount">$${data.amount}</span> into your account.</p>
 			<div class="footer">
@@ -165,7 +165,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Deposit Confirmation</h1>
 			<p>Your deposit of <span class="amount">$${data.amount}</span> has been confirmed.</p>
 			<div class="footer">
@@ -179,7 +179,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Withdrawal Request</h1>
 			<p>You have requested to withdraw <span class="amount">$${data.amount}</span> from your account.</p>
 			<div class="footer">
@@ -193,7 +193,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-				<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+				<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Withdrawal Confirmation</h1>
 			<p>Your withdrawal of <span class="amount">$${data.amount}</span> has been confirmed.</p>
 			<div class="footer">
@@ -207,7 +207,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Trade Confirmation</h1>
 			<p>Trade of <span class="amount">$${data.amount} ${data.symbol}</span> with order type ${data.type} has been successfully executed.</p>
 			<div class="footer">
@@ -216,12 +216,15 @@ export const emailTemplates: EmailTemplates = {
 		</div>
 		`,
 	}),
-	AdminNotification: (data: { amount: number; type: 'deposit' | 'withdraw' }) => ({
+	AdminNotification: (data: {
+		amount: number;
+		type: 'deposit' | 'withdraw';
+	}) => ({
 		subject: `${data.type} Notification`,
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>${data.type} Notification</h1>
 			<p>You have received a ${data.type} notification of <span class="amount">$${data.amount}</span>. from one of our users. Please check your dashboard to view the transaction.</p>
 			<a href="https://www.orionrates.netlify.app/admin/transactions" class="button">View Transactions</a>
@@ -236,7 +239,7 @@ export const emailTemplates: EmailTemplates = {
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="orionrates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="orionrates Logo" class="logo" />
 			<h1>Referral Bonus</h1>
 			<p>You have received a referral bonus of <span class="amount">$${data.amount}</span>. from one of our users. Please check your dashboard to view the transaction.</p>
 				
@@ -246,12 +249,12 @@ export const emailTemplates: EmailTemplates = {
 		</div>
 		`,
 	}),
-	resendToken: (data: { token: string, email: string }) => ({
+	resendToken: (data: { token: string; email: string }) => ({
 		subject: 'Verification Token',
 		html: `
 		${emailStyles}
 		<div class="container">
-			<img src="${getLogoUrl()}" alt="Orion Rates Logo" class="logo" />
+			<img src="https://orionrates.netlify.app/logo.png" alt="Orion Rates Logo" class="logo" />
 			<h1> ${data.email}'s Verification Token</h1>
 			<p>Your verification token is: <strong class="amount">${data.token}</strong>. This token will expire in 10 minutes.</p>
 			<p> If you want to verify your email, please click the button below. If you did not request this, please ignore this email.</p>
